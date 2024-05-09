@@ -81,7 +81,7 @@ export const ProductDescription = styled.h3`
   color: #2c2c2c;
 `;
 
-export const BuyButton = styled.a`
+export const BuyButton = styled.button`
   width: 100%;
   height: 31.91px;
   background: #0f52ba;

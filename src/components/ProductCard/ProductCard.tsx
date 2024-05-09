@@ -13,8 +13,10 @@ import {
   NamePrice,
   Photo,
 } from "./styled";
+import { useCart } from "@/contexts/CartContext";
 
 interface IProductCardProps {
+  id: number;
   name: string;
   description: string;
   photo: string;
@@ -22,11 +24,13 @@ interface IProductCardProps {
 }
 
 export default function ProductCard({
+  id,
   name,
   description,
   photo,
   price,
 }: IProductCardProps) {
+  const { addToCart } = useCart();
   return (
     <Container>
       <Description>
@@ -41,7 +45,11 @@ export default function ProductCard({
           <ProductDescription>{description}</ProductDescription>
         </ProductInfo>
       </Description>
-      <BuyButton href="">
+      <BuyButton
+        onClick={() => {
+          addToCart({ description, id, name, photo, price, quantity: 1 });
+        }}
+      >
         <Image
           alt="Sacola"
           src={"shopping-bag.svg"}

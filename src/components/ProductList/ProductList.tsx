@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import ProductCard from "../ProductCard/ProductCard";
 import { Container, Grid } from "./styled";
 
-interface IProduct {
+export interface IProduct {
   id: number;
   name: string;
   description: string;

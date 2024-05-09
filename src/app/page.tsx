@@ -7,20 +7,22 @@ import ProductCard from "@/components/ProductCard/ProductCard";
 import ProductList from "@/components/ProductList/ProductList";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Container } from "./styled";
+import { CartContextProvider } from "@/contexts/CartContext";
 
 const queryClient = new QueryClient();
 
 export default function Home() {
   return (
-    <Container>
-      <Header />
+    <CartContextProvider>
+      <Container>
+        <Header />
+        <QueryClientProvider client={queryClient}>
+          <ProductList />
+        </QueryClientProvider>
 
-      <QueryClientProvider client={queryClient}>
-        <ProductList />
-      </QueryClientProvider>
-
-      {/* <ProductCard /> */}
-      <Footer />
-    </Container>
+        {/* <ProductCard /> */}
+        <Footer />
+      </Container>
+    </CartContextProvider>
   );
 }
