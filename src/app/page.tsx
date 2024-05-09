@@ -1,8 +1,11 @@
-import Image from "next/image";
-
+import React from "react";
+import Header from "@/components/Header/Header";
 
 export default function Home() {
   return (
-    <div>Bom dia</div>
+    <>
+      <Header />
+      <div>Bom dia</div>
+    </>
   );
 }
