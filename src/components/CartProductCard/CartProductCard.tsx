@@ -14,8 +14,10 @@ import {
   RemoveButton,
   Quantity,
   Qtd,
+  MobilePrice,
 } from "./styled";
 import { useCart } from "@/contexts/CartContext";
+import { useWindowSize } from "@/hooks/useWindowSize";
 
 interface IProductCardProps {
   id: number;
@@ -34,6 +36,8 @@ export default function CartProductCard({
   quantity,
 }: IProductCardProps) {
   const { increaseProduct, decreaseProduct, removeFromCart } = useCart();
+  const { width } = useWindowSize();
+  const isMobile = width! <= 768;
   return (
     <Container>
       <ProductContainer>
@@ -43,40 +47,47 @@ export default function CartProductCard({
           }}
         >
           <Image
-            src="Close_cart.svg"
+            src={isMobile ? "x.svg" : "Close_cart.svg"}
             width={18}
             height={18}
             alt="Fechar Carrinho"
           />
         </RemoveButton>
         <ImgContainer>
-          <Photo
-            src={photo}
-            alt="foto do produto"
-            width={46}
-            height={57}
-          ></Photo>
+          <Photo src={photo} alt="foto do produto" fill></Photo>
         </ImgContainer>
         <ProductTitle>{name}</ProductTitle>
-        <AddButton>
-          <Qtd>Qtd:</Qtd>
-          <MinusButton
-            onClick={() => {
-              decreaseProduct(id);
-            }}
-          >
-            <Image src="-.svg" width={5} height={15} alt="Menos" />
-          </MinusButton>
-          <Quantity>{quantity}</Quantity>
-          <PlusButton
-            onClick={() => {
-              increaseProduct(id);
-            }}
-          >
-            <Image src="+.svg" width={5} height={15} alt="Mais" />
-          </PlusButton>
-        </AddButton>
-        <ProductPrice>R${price.replace(".00", "")}</ProductPrice>
+        <MobilePrice>
+          <AddButton>
+            <Qtd>Qtd:</Qtd>
+            <MinusButton
+              onClick={() => {
+                decreaseProduct(id);
+              }}
+            >
+              <Image
+                src="-.svg"
+                width={isMobile ? 10 : 5}
+                height={15}
+                alt="Menos"
+              />
+            </MinusButton>
+            <Quantity>{quantity}</Quantity>
+            <PlusButton
+              onClick={() => {
+                increaseProduct(id);
+              }}
+            >
+              <Image
+                src="+.svg"
+                width={isMobile ? 10 : 5}
+                height={15}
+                alt="Mais"
+              />
+            </PlusButton>
+          </AddButton>
+          <ProductPrice>R${price.replace(".00", "")}</ProductPrice>
+        </MobilePrice>
       </ProductContainer>
     </Container>
   );

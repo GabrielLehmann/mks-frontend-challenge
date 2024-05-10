@@ -5,6 +5,11 @@ export const Grid = styled.div`
   grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: 22px;
   row-gap: 31px;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const Container = styled.div`
@@ -12,4 +17,9 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex: 1;
+
+  @media (max-width: 768px) {
+    overflow-y: scroll;
+    padding: 20px 0;
+  }
 `;

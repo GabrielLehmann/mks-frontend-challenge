@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const Container = styled(motion.div)`
-  width: 100%;
   top: 0;
   bottom: 0;
   right: 0;
@@ -15,6 +14,10 @@ export const Container = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    width: 330px;
+  }
 `;
 
 export const TitleExit = styled.div`
@@ -23,6 +26,10 @@ export const TitleExit = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 36px 22px 22px 47px;
+
+  @media (max-width: 768px) {
+    padding: 22px 15px 42px 32px;
+  }
 `;
 
 export const Title = styled.p`
@@ -61,6 +68,11 @@ export const Products = styled.div`
     background: #0a359c;
     border-radius: 4px;
   }
+
+  @media (max-width: 768px) {
+    align-items: center;
+    padding: 0;
+  }
 `;
 
 export const FinishPrice = styled.div`
@@ -75,6 +87,10 @@ export const TotalPrice = styled.div`
   font-weight: 700;
   color: #ffffff;
   padding: 22px 60px 42px 47px;
+
+  @media (max-width: 768px) {
+    padding: 22px 43px 42px 32px;
+  }
 `;
 
 export const Total = styled.div``;
@@ -97,4 +113,8 @@ export const Finish = styled.a`
 
   color: #ffffff;
   background-color: #000000;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `;

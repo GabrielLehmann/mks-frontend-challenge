@@ -11,6 +11,11 @@ export const Container = styled.div`
   box-shadow: 0px 2px 8px 0px #00000022;
   border-radius: 8px;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    width: 251px;
+    height: 328px;
+  }
 `;
 
 export const Description = styled.div`
