@@ -8,6 +8,7 @@ import ProductList from "@/components/ProductList/ProductList";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Container } from "./styled";
 import { CartContextProvider } from "@/contexts/CartContext";
+import Cart from "@/components/Cart/Cart";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ export default function Home() {
         {/* <ProductCard /> */}
         <Footer />
       </Container>
+      <Cart></Cart>
     </CartContextProvider>
   );
 }

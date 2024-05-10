@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CartQuantityContainer = styled.div`
+export const CartQuantityContainer = styled.button`
   display: flex;
   gap: 16px;
   margin-right: 88px;
@@ -13,4 +13,7 @@ export const CartQuantityContainer = styled.div`
 
   font-size: 18px;
   font-weight: 700;
+
+  border: none;
+  cursor: pointer;
 `;

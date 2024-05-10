@@ -40,7 +40,7 @@ export default function ProductCard({
         <ProductInfo>
           <NamePrice>
             <ProductTitle>{name}</ProductTitle>
-            <ProductPrice>R${price}</ProductPrice>
+            <ProductPrice>R${price.replace(".00", "")}</ProductPrice>
           </NamePrice>
           <ProductDescription>{description}</ProductDescription>
         </ProductInfo>

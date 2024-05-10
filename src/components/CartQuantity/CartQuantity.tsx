@@ -5,9 +5,13 @@ import { CartQuantityContainer } from "./styled";
 import Image from "next/image";
 
 export default function CartQuantity() {
-  const { getTotalCartQuantity } = useCart();
+  const { getTotalCartQuantity, setIsOpen } = useCart();
   return (
-    <CartQuantityContainer>
+    <CartQuantityContainer
+      onClick={() => {
+        setIsOpen(true);
+      }}
+    >
       <Image alt="Carrinho" src={"cart.svg"} width={18} height={19}></Image>
       <p>{getTotalCartQuantity()}</p>
     </CartQuantityContainer>
