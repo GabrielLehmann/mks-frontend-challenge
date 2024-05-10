@@ -16,4 +16,10 @@ export const CartQuantityContainer = styled.button`
 
   border: none;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    gap: 10px;
+    margin-right: 23px;
+    padding: 8px 15px 7px 9px;
+  }
 `;
