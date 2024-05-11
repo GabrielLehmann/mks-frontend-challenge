@@ -1,6 +1,6 @@
 "use client";
 
-import { useCart } from "@/contexts/CartContext";
+import { useCart } from "../../contexts/CartContext";
 import { CartQuantityContainer } from "./styled";
 import Image from "next/image";
 

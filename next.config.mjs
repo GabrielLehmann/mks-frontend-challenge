@@ -4,6 +4,9 @@ const nextConfig = {
   images: {
     remotePatterns: [{ hostname: "mks-sistemas.nyc3.digitaloceanspaces.com" }],
   },
+  experimental: {
+    forceSwcTransforms: true,
+  },
 };
 
 export default nextConfig;

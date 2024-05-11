@@ -16,8 +16,8 @@ import {
   Qtd,
   MobilePrice,
 } from "./styled";
-import { useCart } from "@/contexts/CartContext";
-import { useWindowSize } from "@/hooks/useWindowSize";
+import { useCart } from "../../contexts/CartContext";
+import { useWindowSize } from "../../hooks/useWindowSize";
 
 interface IProductCardProps {
   id: number;

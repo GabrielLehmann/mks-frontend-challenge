@@ -1,4 +1,4 @@
-import StyledComponentsRegistry from "@/lib/registry";
+import StyledComponentsRegistry from "../lib/registry";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import React from "react";

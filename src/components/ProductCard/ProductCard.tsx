@@ -13,7 +13,7 @@ import {
   NamePrice,
   Photo,
 } from "./styled";
-import { useCart } from "@/contexts/CartContext";
+import { useCart } from "../../contexts/CartContext";
 
 interface IProductCardProps {
   id: number;

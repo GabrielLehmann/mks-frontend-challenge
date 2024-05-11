@@ -1,5 +1,5 @@
-import { ProductPrice } from "@/components/ProductCard/styled";
-import { IProduct } from "@/components/ProductList/ProductList";
+import { ProductPrice } from "../components/ProductCard/styled";
+import { IProduct } from "../components/ProductList/ProductList";
 import {
   Dispatch,
   ReactNode,
